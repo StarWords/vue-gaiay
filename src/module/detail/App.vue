@@ -2,45 +2,21 @@
   <div id="app">
     <img src="./images/logo.png">
     <div>详情内容</div>
-    <video-player :options="videoOptions" @player-state-changed="playerStateChanged"></video-player>
   </div>
 </template>
 
 <script>
   import 'common/css/reset.css';
   import Hello from 'components/Hello/Hello'
-  import VideoPlayer from 'vue-video-player';
-  VideoPlayer.config({
-    youtube: false,
-    switcher: true,
-    hls: true
-  })
   export default {
     name: 'app',
     components: {
-      Hello,
-      VideoPlayer
+      Hello
     },
     data () {
-      return {
-        videoOptions: {
-          source: {
-            type: "application/x-mpegURL",
-            src: 'https://logos-channel.scaleengine.net/logos-channel/live/biblescreen-ad-free/playlist.m3u8',
-            withCredentials: false
-          },
-          language: 'zh-CN',
-          live: true,
-          autoplay: true,
-          height: 540
-        }
-      }
+      return {}
     },
-    methods: {
-      playerStateChanged(playerCurrentState) {
-        console.log(playerCurrentState)
-      }
-    }
+    methods: {}
   }
 </script>
 
